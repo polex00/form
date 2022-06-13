@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 3 Jovan Kis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>We are looking for new members</h1>
+        <form action="https://iolab.sk/form2mail/form2mail.php" method="post" enctype="multipart/form-data"
+            onsubmit="checkFormValidity(); sendForm();">
+
+            <input type="hidden" name="Jovan Kiš">
+            <input type="hidden" name="apikey" value="f5ebf908af6095cdb713d89aba0464e7">
+            <input type="hidden" name="from" value="xkis@stuba.sk">
+            <input type="hidden" name="sender" value="Jovan Kiš">
+            <input type="hidden" name="to" value="jovanposta@gmail.com">
+            <input type="hidden" name="subject" value="Formular">
+            <input type="hidden" name="redirectOk" value="https://webte1.fei.stuba.sk/~xkis/jkljkl_z3/index.html">
+            <input type="hidden" name="redirectFalse" value="https://webte1.fei.stuba.sk/~xkis/jkljkl_z3/index.html">
+
+            <div class="two-row">
+                <div class="row-left" id="firstname">
+                    <label>First name *</label>
+                    <input type="text" required="required" class="inputs" placeholder="ex. John" id="firstname-input"
+                        onblur="checkEmpty('firstname-input');" name="First name"> <br>
+                    <span id="firstname-input-span">This field can't be empty.</span>
+                </div>
+                <div class="row-right" id="lastname">
+                    <label>Last name *</label>
+                    <input type="text" required="required" class="inputs" placeholder="ex. Williams" id="lastname-input"
+                        onblur="checkEmpty('lastname-input');" name="Last name"> <br>
+                    <span id="lastname-input-span">This field can't be empty.</span>
+                </div>
+            </div>
+
+            <div class="two-row">
+                <div class="row-left" id="email">
+                    <label>Email *</label>
+                    <input type="text" required="required" class="inputs" id="email-input"
+                        placeholder="ex. example@random.com" pattern=".{3,}@.*\..{2,4}"
+                        onblur="checkEmpty('email-input'); emailValidate();" name="Email"><br>
+                    <span id="email-input-span">This field can't be empty.</span>
+                </div>
+                <div class="row-right" id="phonenumber">
+                    <label>Phone number *</label>
+                    <input type="text" required="required" class="inputs" placeholder="ex. 0123456789"
+                        id="phonenumber-input" onblur="checkEmpty('phonenumber-input');" name="Phone number"> <br>
+                    <span id="phonenumber-input-span">This field can't be empty.</span>
+                </div>
+            </div>
+
+            <div class="two-row">
+                <div class="row-left" id="age">
+                    <label>Age *</label>
+                    <input type="number" required="required" class="inputs" placeholder="ex. 21" id="age-input"
+                        onblur="checkEmpty('age-input'); checkAge();" name="Age"> <br>
+                    <span id="age-input-span">This field can't be empty.</span>
+                </div>
+                <div class="row-right" id="dateofbirth">
+                    <label>Date of birth *</label>
+                    <input type="date" required="required" class="inputs" id="date-input" onblur="checkAge();"> <br>
+                </div>
+            </div>
+            <div class="two-row">
+                <div class="row-left" id="favlanguage">
+                    <label class="label">Your favorite programming language:</label> <br>
+                    <input type="checkbox" id="language1" name="Programming language 1" value="Python">
+                    <label for="language1">Python</label><br>
+                    <input type="checkbox" id="language2" name="Programming language 2" value="C++">
+                    <label for="language2">C++</label><br>
+                    <input type="checkbox" id="language3" name="Programming language 3" value="Java">
+                    <label for="language3">Java</label><br>
+                    <input type="checkbox" id="language4" name="Other" value="Other" onclick="showOther();">
+                    <label for="language4">Other</label>
+                    <input type="text" name="Other languages" id="language-other">
+                </div>
+
+                <div class="row-right" id="drop-down">
+                    <label>Please, choose:</label> <br>
+                    <select name="Country" id="countries"
+                        onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                        <option value="">Choose your country</option>
+                        <option value="slovakia">Slovakia</option>
+                        <option value="serbia">Serbia</option>
+                        <option value="ukraine">Ukraine</option>
+                    </select> <br>
+                    <select name="City" id="city"
+                        onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                        <option value="">Choose your city</option>
+                    </select> <br>
+                    <select name="University" id="university"
+                        onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                        <option value="">Choose your university</option>
+                    </select>
+                </div>
+            </div>
+            <div class="two-row">
+                <div class="row-left" id="radio-button">
+                    <label>Gender</label> <br>
+                    <input type="radio" id="male" name="Gender" value="Male"
+                        onclick="javascript: radiobutton('male-radio')">
+                    <label for="male">Male</label> <br>
+                    <p id=male-radio>37% of our community are male members!</p>
+                    <input type="radio" id="female" name="Gender" value="Female"
+                        onclick="javascript: radiobutton('female-radio')">
+                    <label for="female">Female</label> <br>
+                    <p id="female-radio">63% of our community are female members!</p><br>
+                </div>
+
+                <div class="row-right" id="about">
+                    <label>Write something more about you</label> <br>
+                    <textarea name="About me" id="aboutyou" cols="35" rows="5"></textarea>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit" id="button" onclick="checkFormValidity();">
+
+        </form>
+    </div>
+
+</body>
+
+</html>

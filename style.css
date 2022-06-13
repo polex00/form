@@ -1,0 +1,151 @@
+html, body {
+  background-color: #3E065F;
+  color: whitesmoke;
+  width: 100%;
+}
+
+body {
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  width: 620px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  display:inline;
+  color: #000;
+}
+
+.container h1 {
+  font-size: 28px;
+  border-bottom: 5px solid #3E065F;
+  padding: 10px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+.row-left {
+  margin-right: 25px;
+  display: inline-block;
+}
+
+.row-right {
+  display: inline-block;
+}
+
+.two-row {
+  margin: 18px 0;
+  display: flex;
+}
+
+
+#male-radio {
+  margin: 0;
+  display: none;
+}
+
+#female-radio {
+  margin: 0;
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+#about {
+  float: right;
+}
+
+#button {
+  border-radius: 5px;
+  background-color: #8E05C2;
+  text-align: center;
+  height: 30px;
+  width: 100px;
+  margin: auto;
+}
+
+#language-other{
+  visibility: hidden;
+}
+
+.inputs{
+  width: 280px;
+  border-radius: 3px;
+  padding: 10px;
+  border: #91949d 1px solid;
+  box-sizing: border-box;
+  margin: 5px 10px 0px 0px;
+}
+
+.label {
+  width:280px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin: 5px 10px 0px 0px;
+}
+
+.inputs-checkbox{
+  width: 280px;
+  border-radius: 3px;
+  padding: 10px;
+  border: #91949d 1px solid;
+  box-sizing: border-box;
+  margin: 5px 10px 0px 0px;
+}
+
+#favlanguage {
+  width: 280px;
+  margin-right: 32px;
+}
+
+#radio-button {
+  width: 280px;
+  margin-right: 32px;
+}
+
+#email-input-span, #phonenumber-input-span,
+#firstname-input-span, #lastname-input-span,
+#age-input-span {
+  display: none;
+}
+
+#my-name {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  
+}
+
+@media (max-width: 768px) {
+  .container{
+    width: 400px;
+  }
+  .two-row{
+    display: block;
+  }
+  #about{
+    float: left;
+  }
+  #button{
+    width:150px;
+  }
+
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
